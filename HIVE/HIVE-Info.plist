@@ -26,9 +26,18 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
+	<key>UISupportedExternalAccessoryProtocols</key>
+	<array>
+		<string>com.momentumoftechnology.fisica</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>external-accessory</string>
+		<string>bluetooth-central </string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
