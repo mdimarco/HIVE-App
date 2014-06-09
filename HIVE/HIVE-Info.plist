@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>Mason.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>4S8ZLN79S7.com.hive.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,20 +24,20 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIMainStoryboardFile</key>
-	<string>Main_iPhone</string>
-	<key>UISupportedExternalAccessoryProtocols</key>
-	<array>
-		<string>com.momentumoftechnology.fisica</string>
-	</array>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>external-accessory</string>
 		<string>bluetooth-central </string>
+	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>Main_iPhone</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedExternalAccessoryProtocols</key>
+	<array>
+		<string>com.momentumoftechnology.fisica</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
