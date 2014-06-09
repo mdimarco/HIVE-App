@@ -19,6 +19,7 @@
 		98116A8919453F390083F9ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98116A7119453F390083F9ED /* UIKit.framework */; };
 		98116A9119453F390083F9ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98116A8F19453F390083F9ED /* InfoPlist.strings */; };
 		98116A9319453F390083F9ED /* HIVETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116A9219453F390083F9ED /* HIVETests.m */; };
+		98116A9F1945410E0083F9ED /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98116A9E1945410E0083F9ED /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		98116A8E19453F390083F9ED /* HIVETests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HIVETests-Info.plist"; sourceTree = "<group>"; };
 		98116A9019453F390083F9ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98116A9219453F390083F9ED /* HIVETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIVETests.m; sourceTree = "<group>"; };
+		98116A9E1945410E0083F9ED /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		98116A6119453F390083F9ED = {
 			isa = PBXGroup;
 			children = (
+				98116A9E1945410E0083F9ED /* Main_iPhone.storyboard */,
 				98116A7319453F390083F9ED /* HIVE */,
 				98116A8C19453F390083F9ED /* HIVETests */,
 				98116A6C19453F390083F9ED /* Frameworks */,
@@ -220,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98116A9F1945410E0083F9ED /* Main_iPhone.storyboard in Resources */,
 				98116A7819453F390083F9ED /* InfoPlist.strings in Resources */,
 				98116A8019453F390083F9ED /* Images.xcassets in Resources */,
 			);
