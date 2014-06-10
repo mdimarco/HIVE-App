@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>533B5D33-A3D5-486D-946C-82BF1C943BE5</string>
+	<string>1269D5FF-7567-4B60-A46A-EFA38614033A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>HIVE</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CBB2E9AD-631E-47E0-879E-48BDB2E33A9B</key>
+		<key>260207E9-5CE9-430C-B227-391E8A7E6F93</key>
 		<string>https://github.com/mdimarco/HIVE-App.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>HIVE.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CBB2E9AD-631E-47E0-879E-48BDB2E33A9B</key>
+		<key>260207E9-5CE9-430C-B227-391E8A7E6F93</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CBB2E9AD-631E-47E0-879E-48BDB2E33A9B</string>
+	<string>260207E9-5CE9-430C-B227-391E8A7E6F93</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CBB2E9AD-631E-47E0-879E-48BDB2E33A9B</string>
+			<string>260207E9-5CE9-430C-B227-391E8A7E6F93</string>
 			<key>IDESourceControlWCCName</key>
 			<string>HIVE-App</string>
 		</dict>
