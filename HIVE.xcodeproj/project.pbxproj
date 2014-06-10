@@ -240,7 +240,7 @@
 				ORGANIZATIONNAME = "Mason Dimarco";
 				TargetAttributes = {
 					98116A6919453F390083F9ED = {
-						DevelopmentTeam = 4S8ZLN79S7;
+						DevelopmentTeam = KB836VK38R;
 					};
 					98116A8419453F390083F9ED = {
 						TestTargetID = 98116A6919453F390083F9ED;
@@ -464,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -472,7 +473,7 @@
 				GCC_PREFIX_HEADER = "HIVE/HIVE-Prefix.pch";
 				INFOPLIST_FILE = "HIVE/HIVE-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96963830-3DE6-49D4-A2EA-6AC320535E91";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -484,6 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -492,7 +494,7 @@
 				GCC_PREFIX_HEADER = "HIVE/HIVE-Prefix.pch";
 				INFOPLIST_FILE = "HIVE/HIVE-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E80BFCF0-E003-41D7-AE1F-C4821EB8F869";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

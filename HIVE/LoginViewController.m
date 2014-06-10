@@ -51,6 +51,8 @@
 
 -(IBAction)submitForm:(id)sender {
     [self loadWithUsername:usernameField.text andPassword:passwordField.text];
+    [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
 }
 
 -(IBAction)uploadSteps:(id)sender {
