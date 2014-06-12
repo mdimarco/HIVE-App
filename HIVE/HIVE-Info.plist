@@ -27,7 +27,7 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>external-accessory</string>
-		<string>bluetooth-central </string>
+		<string>external-accesory</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
