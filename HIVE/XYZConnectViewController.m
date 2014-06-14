@@ -96,11 +96,13 @@
     if([self.sensorConnection isKindOfClass:[WFBikeSpeedCadenceConnection class]])
     {
         WFBikeSpeedCadenceConnection* bsConnection = (WFBikeSpeedCadenceConnection*)self.sensorConnection;
+
+        WFBikeSpeedCadenceData* bsData = [bsConnection getBikeSpeedCadenceData];
         
         if(bsConnection.connectionStatus == WF_SENSOR_CONNECTION_STATUS_CONNECTED){
             isValid = YES;
-            self.serialLabel.text = bsConnection.deviceIDString;
-            self.bsLabel.text = [[bsConnection getBikeSpeedCadenceData] formattedCadence:YES];
+            self.serialLabel.text = @"Connected!";
+            self.bsLabel.text =  [NSString stringWithFormat:@"%3.3f", bsData.accumCadenceTime];;
         }
         
     }
@@ -176,7 +178,7 @@
                     self.sensorConnection = [hardwareConnector requestSensorConnection:params withProximity:range error:&error];
                     
                     UIAlertView* alert = [[UIAlertView alloc]
-                                          initWithTitle:@"" message:[NSString stringWithFormat:@"%@\n\n\n\n%@",self.sensorConnection,error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                          initWithTitle:@"" message:[NSString stringWithFormat:@"Sensor connected.\n\n\n\nLet's get it.",self.sensorConnection,error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                     [alert show];
                 }
                 else
