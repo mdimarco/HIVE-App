@@ -43,6 +43,11 @@
     [self configureRestKit];
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -58,6 +63,7 @@
 -(IBAction)uploadSteps:(id)sender {
     [self addSteps:stepsField.text mins:minsField.text miles:milesField.text];
 }
+
 
 
 - (void)configureRestKit
