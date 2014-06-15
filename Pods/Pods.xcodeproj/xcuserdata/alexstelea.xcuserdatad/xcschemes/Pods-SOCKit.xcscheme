@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0600"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02841406D83D4D29BDD9FF7A"
+               BlueprintIdentifier = "DAF9EC90400D495E9CD77B51"
                BuildableName = "libPods-SOCKit.a"
                BlueprintName = "Pods-SOCKit"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -33,16 +33,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [usernameField setDelegate:self];
-    [passwordField setDelegate:self];
-    [stepsField setDelegate:self];
-    [minsField setDelegate:self];
-    [milesField setDelegate:self];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // check if user is alraidy Login
+    if([defaults objectForKey:@"username"]!=nil  && ![[defaults objectForKey:@"username"] isEqualToString:@""]){
+        
+        
+        NSLog(@"User is already logged in");
+    }
+    
 
 
     [self configureRestKit];
 }
 
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [self.view endEditing:YES];
@@ -127,6 +141,11 @@
         Token *token = [mappingResult.array objectAtIndex:0];
         _authToken = token.access_token;
         resultsField.text = [NSString stringWithFormat:@"Token Type: %@\nAccess Token: %@\nExpires In: %@\nRefresh Token: %@", token.token_type, token.access_token, token.expires_in, token.refresh_token];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:usernameField.text forKey:@"username"];
+        [defaults setObject:passwordField.text forKey:@"password"];
+        [defaults synchronize];
+        NSLog(@"Saved to user session to defaults");
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         resultsField.text = @"Invalid login";
