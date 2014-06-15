@@ -35,15 +35,12 @@
     [super viewDidLoad];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    // check if user is alraidy Login
-    if([defaults objectForKey:@"username"]!=nil  && ![[defaults objectForKey:@"username"] isEqualToString:@""]){
-        
-        
-        NSLog(@"User is already logged in");
-    }
-    
 
+    if([defaults objectForKey:@"username"]!=nil  && ![[defaults objectForKey:@"username"] isEqualToString:@""]){
+        NSLog(@"User is already logged in");
+        
+//        [self presentModalViewController:NULL animated:YES];
+    }
 
     [self configureRestKit];
 }
@@ -122,12 +119,6 @@
         NSLog(@"Error was ': %@", error);
     }];
     
-}
-
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    
-    [textField resignFirstResponder];
-    return YES;
 }
 
 - (void)loadWithUsername:(NSString *)username andPassword:(NSString *)password {
