@@ -27,6 +27,8 @@
 		98116AA71945465A0083F9ED /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98116AA61945465A0083F9ED /* libstdc++.6.dylib */; };
 		98116B081946CC4F0083F9ED /* XYZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B071946CC4F0083F9ED /* XYZMainViewController.m */; };
 		98116B0B19492FB70083F9ED /* XYZConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B0A19492FB70083F9ED /* XYZConnectViewController.m */; };
+		98116B11194E3EA40083F9ED /* HIVEProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B10194E3EA40083F9ED /* HIVEProfileViewController.m */; };
+		98116B14194E3ED40083F9ED /* HIVERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B13194E3ED40083F9ED /* HIVERegisterViewController.m */; };
 		A083710B1945758600523E8B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710A1945758600523E8B /* LoginViewController.m */; };
 		A0837110194576AF00523E8B /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710D194576AF00523E8B /* Token.m */; };
 		A0837111194576AF00523E8B /* Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710F194576AF00523E8B /* Upload.m */; };
@@ -70,6 +72,10 @@
 		98116B071946CC4F0083F9ED /* XYZMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMainViewController.m; sourceTree = "<group>"; };
 		98116B0919492FB70083F9ED /* XYZConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZConnectViewController.h; sourceTree = "<group>"; };
 		98116B0A19492FB70083F9ED /* XYZConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZConnectViewController.m; sourceTree = "<group>"; };
+		98116B0F194E3EA30083F9ED /* HIVEProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIVEProfileViewController.h; sourceTree = "<group>"; };
+		98116B10194E3EA40083F9ED /* HIVEProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVEProfileViewController.m; sourceTree = "<group>"; };
+		98116B12194E3ED40083F9ED /* HIVERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIVERegisterViewController.h; sourceTree = "<group>"; };
+		98116B13194E3ED40083F9ED /* HIVERegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVERegisterViewController.m; sourceTree = "<group>"; };
 		A08371091945758600523E8B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A083710A1945758600523E8B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A083710C194576AF00523E8B /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
@@ -149,6 +155,10 @@
 		98116A7319453F390083F9ED /* HIVE */ = {
 			isa = PBXGroup;
 			children = (
+				98116B12194E3ED40083F9ED /* HIVERegisterViewController.h */,
+				98116B13194E3ED40083F9ED /* HIVERegisterViewController.m */,
+				98116B0F194E3EA30083F9ED /* HIVEProfileViewController.h */,
+				98116B10194E3EA40083F9ED /* HIVEProfileViewController.m */,
 				98116B0919492FB70083F9ED /* XYZConnectViewController.h */,
 				98116B0A19492FB70083F9ED /* XYZConnectViewController.m */,
 				98116A7C19453F390083F9ED /* XYZAppDelegate.h */,
@@ -330,7 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				98116A7E19453F390083F9ED /* XYZAppDelegate.m in Sources */,
+				98116B14194E3ED40083F9ED /* HIVERegisterViewController.m in Sources */,
 				A083710B1945758600523E8B /* LoginViewController.m in Sources */,
+				98116B11194E3EA40083F9ED /* HIVEProfileViewController.m in Sources */,
 				98116B0B19492FB70083F9ED /* XYZConnectViewController.m in Sources */,
 				98116A7A19453F390083F9ED /* main.m in Sources */,
 				98116B081946CC4F0083F9ED /* XYZMainViewController.m in Sources */,
