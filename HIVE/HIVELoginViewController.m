@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 4 Arrows Media, LLC. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "HIVELoginViewController.h"
 #import "Token.h"
 #import "Upload.h"
+#import "HIVEProfileViewController.h"
 #import <RestKit/RestKit.h>
 
 #define kCLIENTID "hive"
@@ -42,7 +43,6 @@
 //        [self presentModalViewController:NULL animated:YES];
     }
 
-    [self configureRestKit];
 }
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
@@ -137,6 +137,7 @@
         [defaults setObject:passwordField.text forKey:@"password"];
         [defaults synchronize];
         NSLog(@"Saved to user session to defaults");
+        
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         resultsField.text = @"Invalid login";

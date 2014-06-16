@@ -10,4 +10,13 @@
 
 @interface HIVEProfileViewController : UIViewController
 
+
+@property (nonatomic, strong) IBOutlet UITextView *resultsField;
+@property (nonatomic, strong) IBOutlet UITextField *stepsField;
+@property (nonatomic, strong) IBOutlet UITextField *minsField;
+@property (nonatomic, strong) IBOutlet UITextField *milesField;
+
+
+-(IBAction)uploadSteps:(id)sender;
+
 @end
