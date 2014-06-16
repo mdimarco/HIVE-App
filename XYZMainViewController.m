@@ -39,6 +39,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)logoutUser:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"username"];
+    [defaults removeObjectForKey:@"password"];
+    [defaults synchronize];
+    
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+}
+
 /*
 #pragma mark - Navigation
 

@@ -12,13 +12,8 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *usernameField;
 @property (nonatomic, strong) IBOutlet UITextField *passwordField;
-@property (nonatomic, strong) IBOutlet UITextView *resultsField;
-@property (nonatomic, strong) IBOutlet UITextField *stepsField;
-@property (nonatomic, strong) IBOutlet UITextField *minsField;
-@property (nonatomic, strong) IBOutlet UITextField *milesField;
 
 
 -(IBAction)submitForm:(id)sender;
--(IBAction)uploadSteps:(id)sender;
 
 @end

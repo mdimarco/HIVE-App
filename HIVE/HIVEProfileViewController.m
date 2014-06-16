@@ -40,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self configureRestKit];
     // Do any additional setup after loading the view.
 }
 
@@ -67,20 +69,12 @@
     // initialize RestKit
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
     
-    //    // setup object mappings
-    RKObjectMapping *tokenMapping = [RKObjectMapping mappingForClass:[Token class]];
-    [tokenMapping addAttributeMappingsFromArray:@[@"access_token", @"expires_in", @"refresh_token", @"token_type"]];
-    
-    //    // register mappings with the provider using a response descriptor
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:tokenMapping method:RKRequestMethodPOST pathPattern:@"oauth/token" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
     RKObjectMapping *stepsMapping = [RKObjectMapping mappingForClass:[Upload class]];
     [stepsMapping addAttributeMappingsFromArray:@[@"username", @"steps", @"mins", @"miles"]];
     
     RKResponseDescriptor *stepsDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:stepsMapping method:RKRequestMethodPOST pathPattern:@"upload/json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
-    NSArray *arr = @[responseDescriptor, stepsDescriptor];
-    [objectManager addResponseDescriptorsFromArray:arr];
+    [objectManager addResponseDescriptor:stepsDescriptor];
     
 }
 
@@ -90,8 +84,9 @@
     NSDictionary *queryParams;
     queryParams = [NSDictionary dictionaryWithObjectsAndKeys:steps, @"steps", mins, @"mins", miles, @"miles", nil];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", _authToken]];
+    [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", [defaults objectForKey:@"auth_token"]]];
     [[RKObjectManager sharedManager] postObject:nil path:@"upload/json" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         Upload *steps = [mappingResult.array objectAtIndex:0];

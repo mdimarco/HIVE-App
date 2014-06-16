@@ -24,7 +24,7 @@
 
 @implementation LoginViewController
 
-@synthesize usernameField, passwordField, resultsField, stepsField, minsField, milesField;
+@synthesize usernameField, passwordField;
 
 - (void)awakeFromNib
 {
@@ -34,13 +34,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if([defaults objectForKey:@"username"]!=nil  && ![[defaults objectForKey:@"username"] isEqualToString:@""]){
         NSLog(@"User is already logged in");
         
+        [self performSegueWithIdentifier:@"mainSegue" sender:self];
 //        [self presentModalViewController:NULL animated:YES];
+    } else {
+        [self configureRestKit];
     }
 
 }
@@ -71,10 +73,6 @@
     [self.passwordField resignFirstResponder];
 }
 
--(IBAction)uploadSteps:(id)sender {
-    [self addSteps:stepsField.text mins:minsField.text miles:milesField.text];
-}
-
 
 
 - (void)configureRestKit
@@ -102,24 +100,6 @@
     [objectManager addResponseDescriptorsFromArray:arr];
 
 }
--(void)addSteps:(NSString *)steps mins:(NSString *)mins miles:(NSString *)miles {
-    
-    NSDictionary *queryParams;
-    queryParams = [NSDictionary dictionaryWithObjectsAndKeys:steps, @"steps", mins, @"mins", miles, @"miles", nil];
-    
-    
-    [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", _authToken]];
-    [[RKObjectManager sharedManager] postObject:nil path:@"upload/json" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        
-        Upload *steps = [mappingResult.array objectAtIndex:0];
-        resultsField.text = [NSString stringWithFormat:@"%@ steps upload to %@.\n %@ had %@ steps, %@ mins, %@ miles", stepsField.text, steps.username, steps.username, steps.steps, steps.mins, steps.miles];
-        
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        resultsField.text = @"Invalid upload";
-        NSLog(@"Error was ': %@", error);
-    }];
-    
-}
 
 - (void)loadWithUsername:(NSString *)username andPassword:(NSString *)password {
     NSString *clientID = [NSString stringWithUTF8String:kCLIENTID];
@@ -131,16 +111,19 @@
     [[RKObjectManager sharedManager] postObject:nil path:@"oauth/token" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         Token *token = [mappingResult.array objectAtIndex:0];
         _authToken = token.access_token;
-        resultsField.text = [NSString stringWithFormat:@"Token Type: %@\nAccess Token: %@\nExpires In: %@\nRefresh Token: %@", token.token_type, token.access_token, token.expires_in, token.refresh_token];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:usernameField.text forKey:@"username"];
         [defaults setObject:passwordField.text forKey:@"password"];
+        [defaults setObject:token.access_token forKey:@"auth_token"];
+
         [defaults synchronize];
         NSLog(@"Saved to user session to defaults");
+        [self performSegueWithIdentifier:@"mainSegue" sender:self];
+
+        NSLog(@"We are logged in");
         
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        resultsField.text = @"Invalid login";
         NSLog(@"Error was ': %@", error);
     }];
 }
