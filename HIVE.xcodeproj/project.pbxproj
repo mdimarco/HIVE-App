@@ -29,7 +29,7 @@
 		98116B0B19492FB70083F9ED /* XYZConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B0A19492FB70083F9ED /* XYZConnectViewController.m */; };
 		98116B11194E3EA40083F9ED /* HIVEProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B10194E3EA40083F9ED /* HIVEProfileViewController.m */; };
 		98116B14194E3ED40083F9ED /* HIVERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B13194E3ED40083F9ED /* HIVERegisterViewController.m */; };
-		A083710B1945758600523E8B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710A1945758600523E8B /* LoginViewController.m */; };
+		A083710B1945758600523E8B /* HIVELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710A1945758600523E8B /* HIVELoginViewController.m */; };
 		A0837110194576AF00523E8B /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710D194576AF00523E8B /* Token.m */; };
 		A0837111194576AF00523E8B /* Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710F194576AF00523E8B /* Upload.m */; };
 /* End PBXBuildFile section */
@@ -76,8 +76,8 @@
 		98116B10194E3EA40083F9ED /* HIVEProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVEProfileViewController.m; sourceTree = "<group>"; };
 		98116B12194E3ED40083F9ED /* HIVERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIVERegisterViewController.h; sourceTree = "<group>"; };
 		98116B13194E3ED40083F9ED /* HIVERegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVERegisterViewController.m; sourceTree = "<group>"; };
-		A08371091945758600523E8B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		A083710A1945758600523E8B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A08371091945758600523E8B /* HIVELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIVELoginViewController.h; sourceTree = "<group>"; };
+		A083710A1945758600523E8B /* HIVELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVELoginViewController.m; sourceTree = "<group>"; };
 		A083710C194576AF00523E8B /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
 		A083710D194576AF00523E8B /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Token.m; sourceTree = "<group>"; };
 		A083710E194576AF00523E8B /* Upload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Upload.h; sourceTree = "<group>"; };
@@ -167,8 +167,8 @@
 				A083710D194576AF00523E8B /* Token.m */,
 				A083710E194576AF00523E8B /* Upload.h */,
 				A083710F194576AF00523E8B /* Upload.m */,
-				A08371091945758600523E8B /* LoginViewController.h */,
-				A083710A1945758600523E8B /* LoginViewController.m */,
+				A08371091945758600523E8B /* HIVELoginViewController.h */,
+				A083710A1945758600523E8B /* HIVELoginViewController.m */,
 				98116A7F19453F390083F9ED /* Images.xcassets */,
 				98116A7419453F390083F9ED /* Supporting Files */,
 			);
@@ -341,7 +341,7 @@
 			files = (
 				98116A7E19453F390083F9ED /* XYZAppDelegate.m in Sources */,
 				98116B14194E3ED40083F9ED /* HIVERegisterViewController.m in Sources */,
-				A083710B1945758600523E8B /* LoginViewController.m in Sources */,
+				A083710B1945758600523E8B /* HIVELoginViewController.m in Sources */,
 				98116B11194E3EA40083F9ED /* HIVEProfileViewController.m in Sources */,
 				98116B0B19492FB70083F9ED /* XYZConnectViewController.m in Sources */,
 				98116A7A19453F390083F9ED /* main.m in Sources */,

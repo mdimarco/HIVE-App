@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 4 Arrows Media, LLC. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "HIVELoginViewController.h"
 #import "Token.h"
 #import "Upload.h"
+#import "HIVEProfileViewController.h"
 #import <RestKit/RestKit.h>
 
 #define kCLIENTID "hive"
@@ -36,7 +37,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    // check if user is alraidy Login
+    // check if user is already Login
     if([defaults objectForKey:@"username"]!=nil  && ![[defaults objectForKey:@"username"] isEqualToString:@""]){
         
         
@@ -45,7 +46,6 @@
     
 
 
-    [self configureRestKit];
 }
 
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
@@ -74,56 +74,6 @@
     [self.passwordField resignFirstResponder];
 }
 
--(IBAction)uploadSteps:(id)sender {
-    [self addSteps:stepsField.text mins:minsField.text miles:milesField.text];
-}
-
-
-
-- (void)configureRestKit
-{
-    // initialize AFNetworking HTTPClient
-    NSURL *baseURL = [NSURL URLWithString:@"https://hive.gt/"];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-
-    // initialize RestKit
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    
-//    // setup object mappings
-    RKObjectMapping *tokenMapping = [RKObjectMapping mappingForClass:[Token class]];
-    [tokenMapping addAttributeMappingsFromArray:@[@"access_token", @"expires_in", @"refresh_token", @"token_type"]];
-
-//    // register mappings with the provider using a response descriptor
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:tokenMapping method:RKRequestMethodPOST pathPattern:@"oauth/token" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
-    RKObjectMapping *stepsMapping = [RKObjectMapping mappingForClass:[Upload class]];
-    [stepsMapping addAttributeMappingsFromArray:@[@"username", @"steps", @"mins", @"miles"]];
-    
-    RKResponseDescriptor *stepsDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:stepsMapping method:RKRequestMethodPOST pathPattern:@"upload/json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
-
-    NSArray *arr = @[responseDescriptor, stepsDescriptor];
-    [objectManager addResponseDescriptorsFromArray:arr];
-
-}
--(void)addSteps:(NSString *)steps mins:(NSString *)mins miles:(NSString *)miles {
-    
-    NSDictionary *queryParams;
-    queryParams = [NSDictionary dictionaryWithObjectsAndKeys:steps, @"steps", mins, @"mins", miles, @"miles", nil];
-    
-    
-    [[RKObjectManager sharedManager].HTTPClient setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"Bearer %@", _authToken]];
-    [[RKObjectManager sharedManager] postObject:nil path:@"upload/json" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        
-        Upload *steps = [mappingResult.array objectAtIndex:0];
-        resultsField.text = [NSString stringWithFormat:@"%@ steps upload to %@.\n %@ had %@ steps, %@ mins, %@ miles", stepsField.text, steps.username, steps.username, steps.steps, steps.mins, steps.miles];
-        
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        resultsField.text = @"Invalid upload";
-        NSLog(@"Error was ': %@", error);
-    }];
-    
-}
-
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
@@ -146,6 +96,7 @@
         [defaults setObject:passwordField.text forKey:@"password"];
         [defaults synchronize];
         NSLog(@"Saved to user session to defaults");
+        
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         resultsField.text = @"Invalid login";
