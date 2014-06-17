@@ -29,6 +29,9 @@
 		98116B0B19492FB70083F9ED /* XYZConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B0A19492FB70083F9ED /* XYZConnectViewController.m */; };
 		98116B11194E3EA40083F9ED /* HIVEProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B10194E3EA40083F9ED /* HIVEProfileViewController.m */; };
 		98116B14194E3ED40083F9ED /* HIVERegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98116B13194E3ED40083F9ED /* HIVERegisterViewController.m */; };
+		A0258E86194FEFD5007A8A89 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = A0258E85194FEFD5007A8A89 /* UIImage+animatedGIF.m */; };
+		A0258E8A194FF794007A8A89 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0258E89194FF794007A8A89 /* giphy.gif */; };
+		A0258E8E194FF8F6007A8A89 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A0258E8D194FF8F6007A8A89 /* logo.png */; };
 		A083710B1945758600523E8B /* HIVELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710A1945758600523E8B /* HIVELoginViewController.m */; };
 		A0837110194576AF00523E8B /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710D194576AF00523E8B /* Token.m */; };
 		A0837111194576AF00523E8B /* Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710F194576AF00523E8B /* Upload.m */; };
@@ -76,6 +79,10 @@
 		98116B10194E3EA40083F9ED /* HIVEProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVEProfileViewController.m; sourceTree = "<group>"; };
 		98116B12194E3ED40083F9ED /* HIVERegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIVERegisterViewController.h; sourceTree = "<group>"; };
 		98116B13194E3ED40083F9ED /* HIVERegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVERegisterViewController.m; sourceTree = "<group>"; };
+		A0258E84194FEFD5007A8A89 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		A0258E85194FEFD5007A8A89 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		A0258E89194FF794007A8A89 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
+		A0258E8D194FF8F6007A8A89 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		A08371091945758600523E8B /* HIVELoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIVELoginViewController.h; sourceTree = "<group>"; };
 		A083710A1945758600523E8B /* HIVELoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIVELoginViewController.m; sourceTree = "<group>"; };
 		A083710C194576AF00523E8B /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
@@ -163,12 +170,16 @@
 				98116B0A19492FB70083F9ED /* XYZConnectViewController.m */,
 				98116A7C19453F390083F9ED /* XYZAppDelegate.h */,
 				98116A7D19453F390083F9ED /* XYZAppDelegate.m */,
+				A0258E8D194FF8F6007A8A89 /* logo.png */,
 				A083710C194576AF00523E8B /* Token.h */,
 				A083710D194576AF00523E8B /* Token.m */,
 				A083710E194576AF00523E8B /* Upload.h */,
+				A0258E89194FF794007A8A89 /* giphy.gif */,
 				A083710F194576AF00523E8B /* Upload.m */,
 				A08371091945758600523E8B /* HIVELoginViewController.h */,
 				A083710A1945758600523E8B /* HIVELoginViewController.m */,
+				A0258E84194FEFD5007A8A89 /* UIImage+animatedGIF.h */,
+				A0258E85194FEFD5007A8A89 /* UIImage+animatedGIF.m */,
 				98116A7F19453F390083F9ED /* Images.xcassets */,
 				98116A7419453F390083F9ED /* Supporting Files */,
 			);
@@ -286,7 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				98116A9F1945410E0083F9ED /* Main_iPhone.storyboard in Resources */,
+				A0258E8E194FF8F6007A8A89 /* logo.png in Resources */,
 				98116A7819453F390083F9ED /* InfoPlist.strings in Resources */,
+				A0258E8A194FF794007A8A89 /* giphy.gif in Resources */,
 				98116A8019453F390083F9ED /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +355,7 @@
 				98116A7E19453F390083F9ED /* XYZAppDelegate.m in Sources */,
 				98116B14194E3ED40083F9ED /* HIVERegisterViewController.m in Sources */,
 				A083710B1945758600523E8B /* HIVELoginViewController.m in Sources */,
+				A0258E86194FEFD5007A8A89 /* UIImage+animatedGIF.m in Sources */,
 				98116B11194E3EA40083F9ED /* HIVEProfileViewController.m in Sources */,
 				98116B0B19492FB70083F9ED /* XYZConnectViewController.m in Sources */,
 				98116A7A19453F390083F9ED /* main.m in Sources */,

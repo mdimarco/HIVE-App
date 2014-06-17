@@ -10,6 +10,7 @@
 #import "Token.h"
 #import "Upload.h"
 #import "HIVEProfileViewController.h"
+#import "UIImage+animatedGIF.h"
 #import <RestKit/RestKit.h>
 
 #define kCLIENTID "hive"
@@ -24,7 +25,7 @@
 
 @implementation LoginViewController
 
-@synthesize usernameField, passwordField;
+@synthesize usernameField, passwordField, dataImageView;
 
 - (void)awakeFromNib
 {
@@ -34,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"giphy" withExtension:@"gif"];
+    self.dataImageView.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if([defaults objectForKey:@"username"]!=nil  && ![[defaults objectForKey:@"username"] isEqualToString:@""]){

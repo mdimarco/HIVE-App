@@ -13,6 +13,7 @@
 @property (nonatomic, strong) IBOutlet UITextField *usernameField;
 @property (nonatomic, strong) IBOutlet UITextField *passwordField;
 
+@property (strong, nonatomic) IBOutlet UIImageView *dataImageView;
 
 -(IBAction)submitForm:(id)sender;
 
