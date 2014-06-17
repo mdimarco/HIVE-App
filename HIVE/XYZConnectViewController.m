@@ -7,6 +7,7 @@
 //
 
 #import "XYZConnectViewController.h"
+#import "HIVEProfileViewController.h"
 #import <WFConnector/WFConnector.h>
 
 @interface XYZConnectViewController () <WFHardwareConnectorDelegate,WFSensorConnectionDelegate>
@@ -97,13 +98,12 @@
     {
         WFBikeSpeedCadenceConnection* bsConnection = (WFBikeSpeedCadenceConnection*)self.sensorConnection;
 
-        WFBikeSpeedCadenceData* bsData = [bsConnection getBikeSpeedCadenceData];
+        self.bsData = [bsConnection getBikeSpeedCadenceData];
         
         if(bsConnection.connectionStatus == WF_SENSOR_CONNECTION_STATUS_CONNECTED){
             isValid = YES;
             self.serialLabel.text = @"Connected!";
-            self.bsLabel.text =  [NSString stringWithFormat:@"%3.3f", bsData.accumCadenceTime];
-            self.bsLabel.text = [NSString stringWithFormat:@"%lu", bsData.accumCrankRevolutions];
+            self.bsLabel.text = [NSString stringWithFormat:@"%lu", self.bsData.accumCrankRevolutions];
         }
         
     }
@@ -114,6 +114,11 @@
     }
     
     
+}
+
+
+- (WFBikeSpeedCadenceData *) getData {
+    return self.bsData;
 }
 
 - (void)connectButtonTouched:(id)sender{
@@ -178,9 +183,7 @@
                     WFProximityRange_t range = WF_PROXIMITY_RANGE_DISABLED;
                     self.sensorConnection = [hardwareConnector requestSensorConnection:params withProximity:range error:&error];
                     
-                    UIAlertView* alert = [[UIAlertView alloc]
-                                          initWithTitle:@"" message:[NSString stringWithFormat:@"Sensor found.\n\n\n\nLet's get it.",self.sensorConnection,error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                    [alert show];
+                    
                 }
                 else
                 {
@@ -342,15 +345,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSObject* obj = [segue destinationViewController];
+    
+    if([obj isKindOfClass:[HIVEProfileViewController class] ]){
+    
+    HIVEProfileViewController *next = [segue destinationViewController];
+    
+    if(self.bsData){
+        [next setRealData:self.bsData];
+    }
+    else{
+        [next setRealData:nil];
+    }
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

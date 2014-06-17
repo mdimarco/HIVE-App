@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WFConnector/WFConnector.h>
+
+
 
 @interface HIVEProfileViewController : UIViewController
 
@@ -16,7 +19,12 @@
 @property (nonatomic, strong) IBOutlet UITextField *minsField;
 @property (nonatomic, strong) IBOutlet UITextField *milesField;
 
+@property WFBikeSpeedCadenceData* realData;
+
+
 
 -(IBAction)uploadSteps:(id)sender;
+
+
 
 @end

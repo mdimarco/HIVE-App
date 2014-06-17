@@ -12,6 +12,8 @@
 #import "Token.h"
 #import "Upload.h"
 #import "HIVEProfileViewController.h"
+#import "HIVEProfileViewController.h"
+#import "HIVEProfileViewController.m"
 #import <RestKit/RestKit.h>
 
 #define kCLIENTID "hive"
@@ -55,7 +57,17 @@
 
 
 -(IBAction)uploadSteps:(id)sender {
+    
+    if( self.realData != nil){
+        [self addSteps:[NSString stringWithFormat:@"%lu",self.realData.accumCrankRevolutions] mins:_minsField.text
+                 miles:_milesField.text];
+        
+        NSLog(@"Uploaded %3.3f cadence!",self.realData.accumCadenceTime);
+        
+    }
+    else{
     [self addSteps:_stepsField.text mins:_minsField.text miles:_milesField.text];
+    }
 }
 
 
@@ -90,25 +102,34 @@
     [[RKObjectManager sharedManager] postObject:nil path:@"upload/json" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         Upload *steps = [mappingResult.array objectAtIndex:0];
+        
+        if(self.realData == nil){
+        
         _resultsField.text = [NSString stringWithFormat:@"%@ steps upload to %@.\n %@ had %@ steps, %@ mins, %@ miles", _stepsField.text, steps.username, steps.username, steps.steps, steps.mins, steps.miles];
+        }
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         _resultsField.text = @"Invalid upload";
         NSLog(@"Error was ': %@", error);
     }];
     
+    if(self.realData){
+        self.resultsField.text=[NSString stringWithFormat:@"Got actual data uploaded of accumulated %lu cadences from meter",self.realData.accumCrankRevolutions];
+    }
+    
+    
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-}
-*/
+}*/
+
 
 @end

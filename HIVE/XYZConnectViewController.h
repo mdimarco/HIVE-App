@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WFConnector/WFConnector.h>
 
 @interface XYZConnectViewController : UIViewController
 
@@ -18,6 +19,11 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *wildcardSwitch;
 
+@property WFBikeSpeedCadenceData* bsData;
+
 - (IBAction)connectButtonTouched:(id)sender;
+
+
+- (WFBikeSpeedCadenceData *) getData;
 
 @end
