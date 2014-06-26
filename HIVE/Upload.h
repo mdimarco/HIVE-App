@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *steps;
 @property (nonatomic, strong) NSString *mins;
 @property (nonatomic, strong) NSString *miles;
+@property (nonatomic, strong) NSString *status;
 
 
 @end

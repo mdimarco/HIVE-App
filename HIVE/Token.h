@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString *expires_in;
 @property (nonatomic, strong) NSString *refresh_token;
 @property (nonatomic, strong) NSString *token_type;
+@property (nonatomic, strong) NSString *status;
 
 @end

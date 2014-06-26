@@ -53,9 +53,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
 -(IBAction)uploadSteps:(id)sender {
     
     if( self.realData != nil){

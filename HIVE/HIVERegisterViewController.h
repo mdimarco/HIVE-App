@@ -10,4 +10,10 @@
 
 @interface HIVERegisterViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UITextField *usernameField;
+@property (nonatomic, strong) IBOutlet UITextField *ageField;
+@property (nonatomic, strong) IBOutlet UITextField *emailField;
+
+-(IBAction)submitForm:(id)sender;
+
 @end

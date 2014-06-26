@@ -35,6 +35,7 @@
 		A083710B1945758600523E8B /* HIVELoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710A1945758600523E8B /* HIVELoginViewController.m */; };
 		A0837110194576AF00523E8B /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710D194576AF00523E8B /* Token.m */; };
 		A0837111194576AF00523E8B /* Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = A083710F194576AF00523E8B /* Upload.m */; };
+		A0FB2C52195BC5C5001D5715 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FB2C51195BC5C5001D5715 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		A083710D194576AF00523E8B /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Token.m; sourceTree = "<group>"; };
 		A083710E194576AF00523E8B /* Upload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Upload.h; sourceTree = "<group>"; };
 		A083710F194576AF00523E8B /* Upload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Upload.m; sourceTree = "<group>"; };
+		A0FB2C51195BC5C5001D5715 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FB2C52195BC5C5001D5715 /* CoreText.framework in Frameworks */,
 				98116AA71945465A0083F9ED /* libstdc++.6.dylib in Frameworks */,
 				98116AA51945463F0083F9ED /* CoreBluetooth.framework in Frameworks */,
 				98116AA3194546370083F9ED /* ExternalAccessory.framework in Frameworks */,
@@ -146,6 +149,7 @@
 		98116A6C19453F390083F9ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0FB2C51195BC5C5001D5715 /* CoreText.framework */,
 				98116AA61945465A0083F9ED /* libstdc++.6.dylib */,
 				98116AA41945463F0083F9ED /* CoreBluetooth.framework */,
 				98116AA2194546370083F9ED /* ExternalAccessory.framework */,
@@ -420,7 +424,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cristian Emil Stelea (RKLMJ683ME)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -469,7 +473,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cristian Emil Stelea (RKLMJ683ME)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -498,8 +502,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -509,7 +513,7 @@
 				INFOPLIST_FILE = "HIVE/HIVE-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FEB7F774-586F-4AA7-88DC-CDEF0C33260D";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -521,8 +525,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -532,7 +536,7 @@
 				INFOPLIST_FILE = "HIVE/HIVE-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FEB7F774-586F-4AA7-88DC-CDEF0C33260D";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};

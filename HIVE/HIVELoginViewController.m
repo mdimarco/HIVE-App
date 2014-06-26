@@ -10,8 +10,8 @@
 #import "Token.h"
 #import "Upload.h"
 #import "HIVEProfileViewController.h"
-#import "UIImage+animatedGIF.h"
 #import <RestKit/RestKit.h>
+#import "UIImage+animatedGIF.h"
 
 #define kCLIENTID "hive"
 #define kCLIENTSECRET "foo"
@@ -25,7 +25,7 @@
 
 @implementation LoginViewController
 
-@synthesize usernameField, passwordField, dataImageView;
+@synthesize usernameField, passwordField ,dataImageView;
 
 - (void)awakeFromNib
 {
@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"giphy" withExtension:@"gif"];
     self.dataImageView.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
@@ -77,12 +78,10 @@
     [self.passwordField resignFirstResponder];
 }
 
-
-
 - (void)configureRestKit
 {
     // initialize AFNetworking HTTPClient
-    NSURL *baseURL = [NSURL URLWithString:@"https://hive.gt/"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://localhost:3000/"];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
 
     // initialize RestKit
@@ -99,8 +98,15 @@
     [stepsMapping addAttributeMappingsFromArray:@[@"username", @"steps", @"mins", @"miles"]];
     
     RKResponseDescriptor *stepsDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:stepsMapping method:RKRequestMethodPOST pathPattern:@"upload/json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    
+    RKObjectMapping *registerMapping = [RKObjectMapping mappingForClass:[Token class]];
+    [registerMapping addAttributeMappingsFromArray:@[@"status"]];
+    
+    RKResponseDescriptor *registerDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:registerMapping method:RKRequestMethodPOST pathPattern:@"api/register" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
 
-    NSArray *arr = @[responseDescriptor, stepsDescriptor];
+    NSArray *arr = @[responseDescriptor, stepsDescriptor, registerDescriptor];
     [objectManager addResponseDescriptorsFromArray:arr];
 
 }
